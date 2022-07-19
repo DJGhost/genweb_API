@@ -4,17 +4,13 @@
  */
 package net.djghost.genweb.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import lombok.Data;
@@ -25,45 +21,46 @@ import lombok.Data;
  */
 @Data
 @Entity
-@Table(name="gw_medecin")
-public class Medecin implements Serializable{
-    @Id
+@Table(name="gw_usr")
+public class User implements Serializable{
+
+   
+ @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name="MED_ID")
+    @Column(name="USR_ID")
     private Long id;
 
-    @Column(name="MED_NOM")
+    @Column(name="USR_NOM")
     private String nom;
 
-    @Column(name="MED_PRENOM")
+    @Column(name="USR_PRENOM")
     private String prenom;
 
-    @Column(name="MED_SEXE")
+    @Column(name="USR_SEXE")
     private Integer sexe;
+    
+    @Column(name="USR_PSW")
+    private String password;
 
-    @Column(name="MED_DATENAISSANCE")
+    @Column(name="USR_DATENAISSANCE")
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date dateNaissance;
     
-    @Column(name="MED_ETABLISSEMENT_ID")
-    private Integer etablissement;
+    @Column(name="USR_GROUP_ID")
+    private Integer groupe;
+    
+    @Column(name="USR_DERNIERE_CO")
+    @Temporal(javax.persistence.TemporalType.DATE)
+    private Date derniereCo;
 
-    @Column(name="MED_FLAG_ACTIF")
+    @Column(name="USR_FLAG_ACTIF")
     private Boolean actif;
     
-    @Column(name="MED_TEL")
-    private String tel;
+    @Column(name="USR_CIVILITE_ID")
+    private Integer civilite;
 
-    @Column(name="MED_FAX")
-    private String fax;
-    
-    @Column(name="MED_EMAIL")
+    @Column(name="USR_EMAIL")
     private String eMail;
     
-    //@Column(name="MED_CREE_PAR_ID")
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "MED_CREE_PAR_ID")
-    @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
-    private User creePar;
-    
 }
+
