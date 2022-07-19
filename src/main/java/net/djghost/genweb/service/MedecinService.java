@@ -13,7 +13,7 @@ import org.springframework.stereotype.Service;
 
 /**
  *
- * @author admin
+ * @author DJGhost
  */
 @Data
 @Service
@@ -22,12 +22,22 @@ public class MedecinService {
     @Autowired
     private MedecinRepository medecinRepository;
     
-    public Optional<Medecin> getEmployee(final Long id) {
+    public Optional<Medecin> getMedecin(final Long id) {
         return medecinRepository.findById(id);
     }
 
-    public Iterable<Medecin> getEmployees() {
+    public Iterable<Medecin> getMedecins() {
         return medecinRepository.findAll();
+    }
+    
+    
+    public void deleteMedecin(final Long id) {
+	medecinRepository.deleteById(id);
+    }
+	
+    public Medecin saveMedecin (Medecin medecin) {
+	Medecin savedMedecin = medecinRepository.save(medecin);
+	return savedMedecin;
     }
     
 }

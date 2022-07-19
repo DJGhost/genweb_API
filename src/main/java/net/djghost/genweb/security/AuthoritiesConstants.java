@@ -6,7 +6,7 @@ package net.djghost.genweb.security;
 
 /**
  *
- * @author admin
+ * @author DJGhost
  */
 /**
  * Constants for Spring Security authorities.
