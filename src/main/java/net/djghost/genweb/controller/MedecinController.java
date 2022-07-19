@@ -41,7 +41,7 @@ public class MedecinController {
     * @param id The id of the medecin
     * @return An Medecin object full filled
     */
-    @GetMapping("/user/{id}")
+    @GetMapping("/medecin/{id}")
     public Medecin getMedecin(@PathVariable("id") final Long id) {
        	Optional<Medecin> medecin = medecinService.getMedecin(id);
 	if(medecin.isPresent()) {
@@ -67,7 +67,7 @@ public class MedecinController {
 	 * @return
 	 */
 	@PutMapping("/medecin/{id}")     ///// A refaire
-	public Medecin updateEmployee(@PathVariable("id") final Long id, @RequestBody Medecin medecin) {
+	public Medecin updateMedecin(@PathVariable("id") final Long id, @RequestBody Medecin medecin) {
 		Optional<Medecin> m = medecinService.getMedecin(id);
 		if(m.isPresent()) {
 			Medecin currentMedecin = m.get();
