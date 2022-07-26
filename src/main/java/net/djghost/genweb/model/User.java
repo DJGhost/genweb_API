@@ -17,7 +17,7 @@ import lombok.Data;
 
 /**
  *
- * @author admin
+ * @author DJGhost
  */
 @Data
 @Entity

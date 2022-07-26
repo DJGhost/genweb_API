@@ -1,0 +1,5 @@
+net\djghost\genweb\model\Medecin.class
+net\djghost\genweb\controller\MedecinController.class
+net\djghost\genweb\service\MedecinService.class
+net\djghost\genweb\GenwebApplication.class
+net\djghost\genweb\repository\MedecinRepository.class
